@@ -19,5 +19,6 @@ body {
 .img-medium {
     height: 200px;
     border-style:ridge;
+    background-color:#ff80aa;
 }
 
