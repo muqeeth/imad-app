@@ -6,7 +6,7 @@ body {
 
 .center {
     text-align: center;
-    background-color:#ff80aa;
+    
 }
 
 .text-big {
@@ -20,6 +20,7 @@ body {
 .img-medium {
     height: 200px;
     border-style:ridge;
+    background-color:#ff80aa;
     
 }
 
