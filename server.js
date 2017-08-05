@@ -16,7 +16,7 @@ var articles={
                 this is article one of my server
             </p>`
 },
-   'artice-two':{
+   'article-two':{
         title:'article-two',
         heading:'article two',
         date: 'sep 10 2015',
