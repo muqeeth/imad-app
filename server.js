@@ -4,7 +4,53 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+var articleone= {
+    title:'article-one',
+    heading:'article one',
+    date: 'sep 5 2015',
+    content:` <p>
+                this is article one of my server
+            </p>
+             <p>
+                this is article one of my server
+            </p>`
+};
+function createTemplate(data){
+    
+    var title=data.title;
+    var content=data.content;
+    var heading=data.heading;
+    var date=data.date;
+    var htmlTemplate= `    
+    <html>
+    <head>
+    <title>
+    ${title}
+    </title>
+    <link href="/ui/style.css" rel="stylesheet" />
+    <meta name="viewport" content = "width= device-width" ,intial-scale=1>
+    </head>
+    <body>
+        <div class = "container">
+            <div>
+                <a href="/">Home</a>
+                
+            </div>
+            <hr/>
+            <h3>${heading}</h3>
+            <div>${date}</div>
+            <div>
+                <p>
+                    ${content}
+                </p>
+            </div>
+        </div>
+    </body>
+    </html>
+    `;
+    return htmlTemplate;
 
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -17,13 +63,13 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 app.get('/article-one.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createTemplate(articleone))
 });
 app.get('/article-two.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+  res.send(path.join(__dirname, 'ui', 'article-two.html'));
 });
 app.get('/article-three.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+  res.send(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
