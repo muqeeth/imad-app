@@ -15,7 +15,7 @@ button.onclick = function(){
     
       
   };
-  request.open('GET',"http://ee16b026.imad.hasura-app.io/");
+  request.open('GET',"http://ee16b026.imad.hasura-app.io/counter");
   request.send(null);
   
 };
