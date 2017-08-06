@@ -43,11 +43,12 @@ submit.onclick=function(){
         }
     }
 };
+};
 
 request.open('GET',"http://ee16b026.imad.hasura-app.io/submit-name?name="+name,true);
 request.send(null);
 
-};
+
 
 
 
