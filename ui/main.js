@@ -21,7 +21,7 @@ button.onclick = function(){
 };
 
 var submit = document.getElementById("submit_btn");
-list ="";
+
 
 submit.onclick=function(){
     
@@ -34,7 +34,7 @@ submit.onclick=function(){
             var names = request.responseText;
             names = JSON.parse(names);
             
-            var ls = [];
+            var ls = "";
             for(var i=0;i<names.length;i++){
                 ls+='<li>'+names[i]+'</li>';
             }
