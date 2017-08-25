@@ -123,7 +123,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 app.get('/articles/:articleName', function (req, res) {
-   pool.query("SELET *FROM article WHERE title ='"+ req.params.articleName +"'",function(err,result){
+   pool.query("SELECT *FROM article WHERE title ='"+ req.params.articleName +"'",function(err,result){
       if(err){
           res.status(500).send(err.toString());
       } else{
